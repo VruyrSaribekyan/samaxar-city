@@ -2,12 +2,13 @@ import { FC } from "react";
 import styles from './Button.module.css'
 
 interface IButtonProps {
-    title:string
+    title:string,
+    style?:{}
 }
 
-const Button:FC<IButtonProps> = ({title}):JSX.Element => {
+const Button:FC<IButtonProps> = ({title, style}):JSX.Element => {
     return(
-        <button className={styles.wrapper}>
+        <button style={style} className={styles.wrapper}>
             {title}
         </button>
     )

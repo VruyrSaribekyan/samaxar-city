@@ -1,14 +1,17 @@
 import { ChangeEventHandler, FC } from "react";
-import styles from './Input.module.css'
+import styles from "./Input.module.css";
 
 interface IInputProps {
-    onChangeHandler:ChangeEventHandler,
-    type:string
+  onChangeHandler: ChangeEventHandler;
+  type: string;
+  style?:{}
 }
 
-const Input:FC<IInputProps> = ({onChangeHandler, type}):JSX.Element => {
-    return(
-        <input type={type} onChange={onChangeHandler}/>
-    )
-}
-export default Input
+const Input: FC<IInputProps> = ({ onChangeHandler, type, style }): JSX.Element => {
+  return (
+    <div className={styles.wrapper}>
+      <input style={style} type={type} onChange={onChangeHandler} />
+    </div>
+  );
+};
+export default Input;
